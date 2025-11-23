@@ -5,7 +5,8 @@ loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 module.exports = defineConfig({
   admin: {
     backendUrl: process.env.MEDUSA_BACKEND_URL,
-    path: `/${process.env.MEDUSA_ADMIN_PATH}`,
+    storefrontUrl: process.env.MEDUSA_STOREFRONT_URL || "http://localhost:8000",
+    path: process.env.MEDUSA_ADMIN_PATH as `/${string}`,
   },
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
